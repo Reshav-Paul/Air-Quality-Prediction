@@ -1,1 +1,31 @@
-Reshav will Put statistical results relating to the predictions here.
+PM10
+__________________________________________________________________________________________
+Parameters with most importance:
+'D-1 PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility', 'Dew Point Temperature'
+optimum degree: 2
+mean rms: 	26.34790678997654
+mean percentage:68.97263157894737
+best rms: 	22.46067803067777
+best percentage:73.26315789473684
+__________________________________________________________________________________________
+
+NO2
+__________________________________________________________________________________________
+Parameters with most importance:
+'D-1 NO2', 'D-1 PM10', 'Horizontal Visibility', 'Relative Humidity', 'Pressure Station Level'
+optimum degree: 2
+mean rms: 	10.775514393602434
+mean percentage:75.86526315789472
+best rms: 	9.0385800696986
+best percentage:80.42105263157895
+__________________________________________________________________________________________
+
+SO2 (Results are not convincing)
+__________________________________________________________________________________________
+Parameters with most importance:
+'D-1 SO2', 'Day No.'
+optimum degree: 2 (higher degrees have no impact, negative or positive)
+mean rms: 	3.219183845950681
+mean percentage:50.98947368421054
+best rms: 	2.6477239154416945
+best percentage:56.21052631578948
