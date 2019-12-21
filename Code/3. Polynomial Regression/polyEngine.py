@@ -1,20 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn import metrics
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-
-
-# In[3]:
-
 
 class polyEngine:
     def __init__(self, filename, col_list, target_y, test_size, degree):
@@ -61,8 +53,9 @@ class polyEngine:
         y_error = self.predicted_values - self.actual_values
         
         #mean sqaure error
-        print("rms error: ", end = ": ")
-        print(np.sqrt(metrics.mean_squared_error(self.actual_values, self.predicted_values)))
+        rms = np.sqrt(metrics.mean_squared_error(self.actual_values, self.predicted_values))
+        #print("rms error: ", end = ": ")
+        #print(rms)
         
         #variable count stores errors in prediction where error < 20%
         count = []
@@ -71,8 +64,7 @@ class polyEngine:
                 count.append(abs(y_error))
         
         #print the percentage of predictions where error < 20%        
-        print("percentage of predictions with error < 20%", end = ": ")
-        print(len(count) / len(y_error) * 100)
+        #print("percentage of predictions with error < 20%", end = ": ")
+        #print(len(count) / len(y_error) * 100)
         
-        return y_error
-
+        return [y_error, rms, len(count) / len(y_error) * 100]
