@@ -15,15 +15,15 @@ class polyEngine:
         self.target_y = target_y
         self.test_size = test_size
         self.degree = degree
-        self.dataset = self.loadData(filename)
+        self.dataset = self.load_data(filename)
         self.actual_values = []
         self.predicted_values = []
 
-    def loadData(self, fileName):
+    def load_data(self, fileName):
         data = pd.read_csv(self.filename)
         return data.iloc[:2372, : ]
 
-    def runEngine(self):
+    def run_engine(self):
         y = self.dataset[self.target_y].values
         y = np.array(y)
         X = self.dataset[self.col_list].values
@@ -32,11 +32,12 @@ class polyEngine:
         #split the entire set into training and test sets
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
         self.actual_values = y_test
+        
         #fit the X parameters of the training set into a polynomial of degree d, best case d = 2
         poly_reg = PolynomialFeatures(degree = self.degree)
         X_poly = poly_reg.fit_transform(X_train)
+        
         lin_reg2 = LinearRegression()
-
         #fit the prediction model
         lin_reg2.fit(X_poly, y_train)
         
@@ -47,24 +48,28 @@ class polyEngine:
     def predict(self, lin_reg2, X):
         predictions = lin_reg2.predict(X);
         self.predicted_values = predictions
+        
+    def get_root_mean_squared_error(self):
+        rmse = np.sqrt(metrics.mean_squared_error(self.actual_values, self.predicted_values))
+        return rmse
+    
+    def get_mean_absolute_error(self):
+        mae = metrics.mean_absolute_error(self.actual_values, self.predicted_values)
+        return mae
+    
+    def get_root_mean_squared_log_error(self):
+        rmsle = np.sqrt(metrics.mean_squared_log_error(self.actual_values, self.predicted_values))
+        return rmsle
+    
+    def get_error_list(self):
+        return self.predicted_values - self.actual_values
 
-    def getStatusLog(self):
+    def get_prediction_accuracy(self):
         #calculate errors for each prediction
         y_error = self.predicted_values - self.actual_values
-        
-        #mean sqaure error
-        rms = np.sqrt(metrics.mean_squared_error(self.actual_values, self.predicted_values))
-        #print("rms error: ", end = ": ")
-        #print(rms)
-        
         #variable count stores errors in prediction where error < 20%
         count = []
         for i in range(len(self.actual_values)):
             if(abs(y_error[i]) < 0.20 * self.actual_values[i]):
                 count.append(abs(y_error))
-        
-        #print the percentage of predictions where error < 20%        
-        #print("percentage of predictions with error < 20%", end = ": ")
-        #print(len(count) / len(y_error) * 100)
-        
-        return [y_error, rms, len(count) / len(y_error) * 100]
+        return len(count) / len(y_error) * 100
