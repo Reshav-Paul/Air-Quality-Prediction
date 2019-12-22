@@ -1,28 +1,29 @@
-#!/usr/bin/env python
-# coding: utf-8
+# -*- coding: utf-8 -*-
 
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn import metrics
-from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVR
 from sklearn.model_selection import train_test_split
+from sklearn import metrics
+import matplotlib.pyplot as plt
 
-class polyEngine:
-    def __init__(self, filename, col_list, target_y, test_size, degree):
+class svr_engine:
+    
+    def __init__(self, filename, col_list, target_y, kernel, test_size):
         self.filename = filename
+        self.dataset = self.load_data()
         self.col_list = col_list
         self.target_y = target_y
+        self.kernel = kernel
         self.test_size = test_size
-        self.degree = degree
-        self.dataset = self.load_data()
         self.actual_values = []
         self.predicted_values = []
-
+         
     def load_data(self):
-        data = pd.read_csv(self.filename)
-        return data.iloc[:2372, : ]
-
+       data = pd.read_csv(self.filename)
+       return data.iloc[:2372, : ]
+    
     def run_engine(self):
         y = self.dataset[self.target_y].values
         y = np.array(y)
@@ -32,23 +33,23 @@ class polyEngine:
         #split the entire set into training and test sets
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
         self.actual_values = y_test
+        self.actual_values = self.actual_values.flatten()
+        y_train = y_train.reshape(-1, 1)
         
-        #fit the X parameters of the training set into a polynomial of degree d, best case d = 2
-        poly_reg = PolynomialFeatures(degree = self.degree)
-        X_poly = poly_reg.fit_transform(X_train)
+        #peform scaling
+        scaler_X = StandardScaler()
+        scaler_y = StandardScaler()
+        X_fit = scaler_X.fit_transform(X_train)
+        y_fit = scaler_y.fit_transform(y_train.reshape(-1, 1))
         
-        lin_reg2 = LinearRegression()
-        #fit the prediction model
-        lin_reg2.fit(X_poly, y_train)
-        
-        X_transform = poly_reg.fit_transform(X_test)
-        self.predict(lin_reg2, X_transform)
-        return lin_reg2
-
-    def predict(self, lin_reg2, X):
-        predictions = lin_reg2.predict(X);
-        self.predicted_values = predictions
-        
+        #implement the model
+        regressor = SVR(kernel = self.kernel)
+        regressor.fit(X_fit, y_fit.ravel())
+        predictions = scaler_y.inverse_transform(regressor.predict(scaler_X.transform(X_test)))
+        self.predicted_values = predictions 
+        self.predicted_values = self.predicted_values.flatten()
+        return regressor        
+    
     def get_root_mean_squared_error(self):
         rmse = np.sqrt(metrics.mean_squared_error(self.actual_values, self.predicted_values))
         return rmse
@@ -63,7 +64,7 @@ class polyEngine:
     
     def get_error_list(self):
         return self.predicted_values - self.actual_values
-
+    
     def get_prediction_accuracy(self):
         #calculate errors for each prediction
         y_error = self.predicted_values - self.actual_values
@@ -73,3 +74,11 @@ class polyEngine:
             if(abs(y_error[i]) < 0.20 * self.actual_values[i]):
                 count.append(abs(y_error))
         return len(count) / len(y_error) * 100
+    
+    
+    
+    
+    
+    
+    
+    

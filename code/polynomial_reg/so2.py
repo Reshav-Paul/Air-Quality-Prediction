@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import polyEngine
 
-filename = "Data\mergedNew.csv"
+filename = "..\data\merged_new.csv"
 col_list = ['D-1 SO2', 'Day No.']
 target_y = ['SO2']
 test_size = 0.2

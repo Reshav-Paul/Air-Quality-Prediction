@@ -4,7 +4,7 @@
 import polyEngine
 
 
-filename = "Data\mergedNew.csv"
+filename = "..\data\merged_new.csv"
 col_list = ['D-1 PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility',
              'Dew Point Temperature'];
 target_y = ['PM10']

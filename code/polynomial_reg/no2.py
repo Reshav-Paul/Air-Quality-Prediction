@@ -3,7 +3,7 @@
 
 import polyEngine
 
-filename = "Data\mergedNew.csv"
+filename = "..\data\merged_new.csv"
 col_list = ['D-1 NO2', 'D-1 PM10', 'Horizontal Visibility', 'Relative Humidity',
             'Pressure Station Level'];
 target_y = ['NO2']
@@ -34,9 +34,9 @@ for i in range(n_times_run):
     if(min_abs > engine.get_mean_absolute_error()):
         min_abs = engine.get_mean_absolute_error()
 
-print("avg rms: ", total_rms / n_times_run)
+print("avg rms: ", total_rms / n_times_run) #11
 print("avg accuracy: ", total_percentage / n_times_run)
-print("avg abs: ", total_abs / n_times_run)
-print("min rms: ", min_rms)
+print("avg abs: ", total_abs / n_times_run) #6.82
+print("min rms: ", min_rms) #9.35
 print("max accuracy: ", max_percentage)
-print("min mae: ", min_abs)
+print("min mae: ", min_abs) #6.18
