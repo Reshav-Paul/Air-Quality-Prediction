@@ -8,7 +8,7 @@ from sklearn import metrics
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
-class polyEngine:
+class poly_engine:
     def __init__(self, filename, col_list, target_y, test_size, degree):
         self.filename = filename
         self.col_list = col_list
@@ -18,6 +18,7 @@ class polyEngine:
         self.dataset = self.load_data()
         self.actual_values = []
         self.predicted_values = []
+        self.score = 0.0
 
     def load_data(self):
         data = pd.read_csv(self.filename)
@@ -42,13 +43,17 @@ class polyEngine:
         lin_reg2.fit(X_poly, y_train)
         
         X_transform = poly_reg.fit_transform(X_test)
+        self.score = lin_reg2.score(X_transform, self.actual_values)
         self.predict(lin_reg2, X_transform)
         return lin_reg2
 
     def predict(self, lin_reg2, X):
         predictions = lin_reg2.predict(X);
         self.predicted_values = predictions
-        
+    
+    def get_score(self):
+        return self.score
+    
     def get_root_mean_squared_error(self):
         rmse = np.sqrt(metrics.mean_squared_error(self.actual_values, self.predicted_values))
         return rmse
@@ -61,7 +66,7 @@ class polyEngine:
         rmsle = np.sqrt(metrics.mean_squared_log_error(self.actual_values, self.predicted_values))
         return rmsle
     
-    def get_error_list(self):
+    def get_error(self):
         return self.predicted_values - self.actual_values
 
     def get_prediction_accuracy(self):

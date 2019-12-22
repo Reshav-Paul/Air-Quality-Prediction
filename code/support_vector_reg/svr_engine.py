@@ -19,6 +19,7 @@ class svr_engine:
         self.test_size = test_size
         self.actual_values = []
         self.predicted_values = []
+        self.score = 0
          
     def load_data(self):
        data = pd.read_csv(self.filename)
@@ -48,7 +49,12 @@ class svr_engine:
         predictions = scaler_y.inverse_transform(regressor.predict(scaler_X.transform(X_test)))
         self.predicted_values = predictions 
         self.predicted_values = self.predicted_values.flatten()
-        return regressor        
+        
+        self.score = regressor.score(scaler_X.transform(X_test), scaler_y.transform(y_test))
+        return regressor   
+
+    def get_score(self):        
+        return self.score
     
     def get_root_mean_squared_error(self):
         rmse = np.sqrt(metrics.mean_squared_error(self.actual_values, self.predicted_values))
@@ -62,7 +68,7 @@ class svr_engine:
         rmsle = np.sqrt(metrics.mean_squared_log_error(self.actual_values, self.predicted_values))
         return rmsle
     
-    def get_error_list(self):
+    def get_error(self):
         return self.predicted_values - self.actual_values
     
     def get_prediction_accuracy(self):
