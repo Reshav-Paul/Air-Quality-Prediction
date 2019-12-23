@@ -1,1 +1,81 @@
-Put statistical results relating to the predictions here.
+PM10
+__________________________________________________________
+
+Important parameters:
+'D-1 PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility', 'Relative Humidity'
+runs: 100
+
+average mae :  26.372690736842113
+average rmse :  37.439568210802435
+average accuracy :  51.968421052631584
+average score :  0.764996319887074
+
+least mae model:
+mae:  23.21816842105263
+rmse:  32.47344296336218
+accuracy:  52.21052631578947
+
+least rmse model:
+mae:  23.404063157894736
+rmse:  31.86576531904453
+accuracy:  55.368421052631575
+
+greatest accuracy model:
+mae:  24.533684210526317
+rmse:  34.989741149145566
+accuracy:  56.631578947368425
+__________________________________________________________
+
+NO2
+__________________________________________________________
+
+Important parameters:
+'D-1 NO2', 'Day No.', 'Horizontal Visibility', 'Relative Humidity', 'Pressure Station Level'
+runs: 50
+
+average mae :  9.979506947368419
+average rmse :  16.057126001880206
+average accuracy :  60.60210526315789
+average score :  0.5998082131979166
+
+least mae model:
+mae:  8.651031578947368
+rmse:  12.649683965263822
+accuracy:  64.0
+
+least rmse model:
+mae:  8.651031578947368
+rmse:  12.649683965263822
+accuracy:  64.0
+
+greatest accuracy model:
+mae:  9.004526315789473
+rmse:  13.587494691811292
+accuracy:  64.84210526315789
+___________________________________________________________
+
+SO2
+___________________________________________________________
+
+important parameters:
+D-1 SO2
+
+average mae :  2.5126360265190955
+average rmse :  4.156882543133434
+average accuracy :  39.271578947368404
+average score :  0.02229434367244397
+
+least mae model:
+mae:  2.201686516290727
+rmse:  3.4799926882448324
+accuracy:  44.21052631578947
+
+least rmse model:
+mae:  2.2830730576441103
+rmse:  3.255227418091056
+accuracy:  39.36842105263158
+
+greatest accuracy model:
+mae:  2.2270273980405557
+rmse:  3.632895323020558
+accuracy:  46.73684210526316
