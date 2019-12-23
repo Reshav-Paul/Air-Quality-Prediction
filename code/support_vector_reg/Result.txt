@@ -1,1 +1,79 @@
-Put statistical results relating to the predictions here.
+PM10
+_____________________________________________________________
+
+important parameters:
+'D-1 PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility', 'Dew Point Temperature'
+
+avg mae:  18.18224208542454
+avg rmse:  26.45491739406387
+avg accuracy:  69.20000000000002
+avg score:  0.8810484707588765
+
+least mae model:
+mae:  16.538874108509738
+rmse:  23.67046423113396
+accuracy:  70.52631578947368
+
+least rmse model:
+mae:  16.538874108509738
+rmse:  23.67046423113396
+accuracy:  70.52631578947368
+
+greatest accuracy model:
+mae:  17.174226981429367
+rmse:  25.470608441718685
+accuracy:  72.84210526315789
+________________________________________________________________________
+
+NO2
+________________________________________________________________________
+
+important parameters:
+'Day No.','Air Temperature', 'Pressure Station Level', 'Horizontal Visibility', 'D-1 NO2', 'Relative Humidity'
+
+avg mae:  6.736731652810329
+avg rms:  11.25522512706472
+avg accuracy:  76.94736842105262
+avg score:  0.8025757129546559
+
+least mae model:
+mae:  6.043908186279497
+rmse:  8.894767165598376
+accuracy:  78.10526315789474
+
+least rmse model:
+mae:  6.043908186279497
+rmse:  8.894767165598376
+accuracy:  78.10526315789474
+
+greatest accuracy model:
+mae:  6.134156429968398
+rmse:  9.116023484411034
+accuracy:  80.84210526315789
+________________________________________________________________________
+
+SO2
+________________________________________________________________________
+
+important parameters:
+'D-1 SO2', 'Day No.'
+
+avg mae:  1.7567217247337807
+avg rmse:  3.1517138596909433
+avg accuracy:  54.02105263157895
+avg score:  0.44861705045597794
+
+least mae model:
+mae:  1.5705096114773096
+rmse:  2.371485727035416
+accuracy:  55.78947368421052
+
+least rmse model:
+mae:  1.5705096114773096
+rmse:  2.371485727035416
+accuracy:  55.78947368421052
+
+greatest accuracy model:
+mae:  1.71809708365705
+rmse:  3.495840003226269
+accuracy:  56.631578947368425

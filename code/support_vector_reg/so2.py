@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import sys, os
 sys.path.append(os.path.abspath('..\\utility_modules'))
 
@@ -6,13 +7,12 @@ from svr_engine import svr_engine
 from metric_wrapper import metric_wrapper
 
 filename = "..\data\merged_new.csv"
-col_list = ['D-1 PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility',
-             'Dew Point Temperature'];
-target_y = ['PM10']
+col_list = ['D-1 SO2', 'Day No.'];
+target_y = ['SO2']
 test_size = 0.2
 kernel = 'rbf'
 
-n_times_run = 50
+n_times_run = 10
 total_rms = 0
 total_mae = 0
 total_accuracy = 0

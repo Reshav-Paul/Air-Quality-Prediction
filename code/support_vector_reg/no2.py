@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
+
 import sys, os
 sys.path.append(os.path.abspath('..\\utility_modules'))
 
 from svr_engine import svr_engine
 from metric_wrapper import metric_wrapper
 
-filename = "..\data\merged_new.csv"
-col_list = ['D-1 PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility',
-             'Dew Point Temperature'];
-target_y = ['PM10']
-test_size = 0.2
+filename = '..\\data\\merged_new.csv'
+col_list = ['Day No.','Air Temperature', 'Pressure Station Level',
+            'Horizontal Visibility', 'D-1 NO2', 'Relative Humidity'];
 kernel = 'rbf'
+target_y = ['NO2']
+test_size = 0.2
 
 n_times_run = 50
-total_rms = 0
 total_mae = 0
+total_rms = 0
 total_accuracy = 0
-total_score= 0
+total_score = 0
 
 engine = svr_engine(filename, col_list, target_y, kernel, test_size)
-
 least_mae_model = metric_wrapper(100, 100, 0)
 least_rmse_model = metric_wrapper(100, 100, 0)
 greatest_accuracy_model = metric_wrapper(100, 100, 0)
@@ -29,12 +29,8 @@ for i in range(n_times_run):
     
     mae = engine.get_mean_absolute_error()
     rms = engine.get_root_mean_squared_error()
+    score = engine.get_score()
     accuracy = engine.get_prediction_accuracy()
-    
-    total_mae += mae
-    total_rms += rms
-    total_accuracy += accuracy
-    total_score += engine.get_score();
     
     if(mae < least_mae_model.mae):
         least_mae_model.copy(rms, mae, accuracy, regressor)
@@ -42,9 +38,14 @@ for i in range(n_times_run):
         least_rmse_model.copy(rms, mae, accuracy, regressor)
     if(accuracy > greatest_accuracy_model.accuracy):
         greatest_accuracy_model.copy(rms, mae, accuracy, regressor)
-
+        
+    total_mae += mae
+    total_rms += rms
+    total_accuracy += accuracy
+    total_score += score
+    
 print('avg mae: ', total_mae / n_times_run)
-print('avg rmse: ', total_rms / n_times_run)
+print('avg rms: ', total_rms / n_times_run)
 print('avg accuracy: ', total_accuracy / n_times_run)
 print('avg score: ', total_score / n_times_run)
 
