@@ -1,1 +1,89 @@
-Put statistical results relating to the predictions here.
+PM10
+__________________________________________________________
+
+important paramters:
+'D-1 PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature', 'Pressure Station Level', 'Horizontal Visibility'
+
+runs: 50
+no of trees: 30
+
+average mae :  19.35877392280702
+average rmse :  27.59822320732495
+average accuracy :  65.70105263157893
+average score :  0.8701480609489061
+
+least mae model:
+mae:  17.04700842105263
+rmse:  23.244441505853917
+accuracy:  70.3157894736842
+
+least rmse model:
+mae:  17.04700842105263
+rmse:  23.244441505853917
+accuracy:  70.3157894736842
+
+greatest accuracy model:
+mae:  17.04700842105263
+rmse:  23.244441505853917
+accuracy:  70.3157894736842
+___________________________________________________________
+
+NO2
+___________________________________________________________
+
+Important parameters:
+'D-1 NO2', 'Day No.', 'Air Temperature', 'Pressure Station Level', 'Relative Humidity', 'Horizontal Visibility', 'D-1 PM10'
+
+runs: 50
+no of trees: 30
+
+average mae :  7.221109192982458
+average rmse :  11.611827428594902
+average accuracy :  73.93263157894737
+average score :  0.7933641897640007
+
+least mae model:
+mae:  6.309971228070175
+rmse:  9.685150463666512
+accuracy:  78.73684210526316
+
+least rmse model:
+mae:  6.309971228070175
+rmse:  9.685150463666512
+accuracy:  78.73684210526316
+
+greatest accuracy model:
+mae:  6.309971228070175
+rmse:  9.685150463666512
+accuracy:  78.73684210526316
+
+__________________________________________________________
+
+SO2
+__________________________________________________________
+
+Important parameters:
+'D-1 SO2', 'Day No.', 'Air Temperature', 'Pressure Station Level', 'Year'
+
+runs: 50
+no of trees: 30
+
+average mae :  1.8609097964912282
+average rmse :  3.248150313971992
+average accuracy :  52.345263157894735
+average score :  0.4343755511631878
+
+least mae model:
+mae:  1.6079817543859651
+rmse:  2.499921994853215
+accuracy:  58.10526315789474
+
+least rmse model:
+mae:  1.6079817543859651
+rmse:  2.499921994853215
+accuracy:  58.10526315789474
+
+greatest accuracy model:
+mae:  1.6079817543859651
+rmse:  2.499921994853215
+accuracy:  58.10526315789474
