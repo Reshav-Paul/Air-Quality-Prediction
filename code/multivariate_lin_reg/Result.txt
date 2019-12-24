@@ -1,1 +1,81 @@
-Put statistical results relating to the predictions here.
+PM10
+__________________________________________________________
+
+Important paramters:
+'D-1 PM10', 'Dew Point Temperature', 'Horizontal Visibility', 'Air Temperature',
+'Pressure Station Level'
+
+avg mae:  18.944018499487935
+avg rmse:  26.885572297036035
+avg accuracy:  65.71368421052631
+avg score:  0.8777859362212996
+
+least mae model:
+mae:  16.936949518975865
+rmse:  23.764737984084473
+accuracy:  68.42105263157895
+
+least rmse model:
+mae:  16.936949518975865
+rmse:  23.764737984084473
+accuracy:  68.42105263157895
+
+greatest accuracy model:
+mae:  17.890331994631815
+rmse:  24.623847170207128
+accuracy:  71.15789473684211
+__________________________________________________________
+
+NO2
+__________________________________________________________
+
+Important parameters:
+'D-1 NO2', 'Air Temperature', 'Pressure Station Level', 'Relative Humidity',
+'Horizontal Visibility'
+
+avg mae:  6.969076523291448
+avg rmse:  11.35383767450581
+avg accuracy:  73.81894736842106
+avg score:  0.7966465348947313
+
+least mae model:
+mae:  6.207965317205262
+rmse:  9.471793490205448
+accuracy:  79.57894736842105
+
+least rmse model:
+mae:  6.2840199510237404
+rmse:  8.730260835769561
+accuracy:  74.31578947368422
+
+greatest accuracy model:
+mae:  6.207965317205262
+rmse:  9.471793490205448
+accuracy:  79.57894736842105
+___________________________________________________________
+
+SO2
+___________________________________________________________
+
+important parameters:
+'D-1 SO2', 'Air Temperature'
+
+avg mae:  1.9305455071741442
+avg rmse:  3.257378676386091
+avg accuracy:  46.91789473684211
+avg score:  0.41826272545575727
+
+least mae model:
+mae:  1.635253433082489
+rmse:  2.3494524768285343
+accuracy:  49.473684210526315
+
+least rmse model:
+mae:  1.635253433082489
+rmse:  2.3494524768285343
+accuracy:  49.473684210526315
+
+greatest accuracy model:
+mae:  1.7553120175353192
+rmse:  2.7967733554554757
+accuracy:  52.421052631578945
