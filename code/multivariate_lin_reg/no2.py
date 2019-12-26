@@ -10,7 +10,6 @@ col_list = ['D-1 NO2', 'Air Temperature', 'Pressure Station Level',
             'Relative Humidity', 'Horizontal Visibility'];
 target_y = ['NO2']
 test_size = 0.2
-degree = 2
 
 n_times_run = 50
 total_rms = 0
@@ -24,7 +23,7 @@ least_mae_model = metric_wrapper(100, 100, 0)
 least_rmse_model = metric_wrapper(100, 100, 0)
 greatest_accuracy_model = metric_wrapper(100, 100, 0)
 
-engine = multi_lin_reg_engine(filename, col_list, target_y, test_size, degree)
+engine = multi_lin_reg_engine(filename, col_list, target_y, test_size)
 
 for i in range(n_times_run):
     

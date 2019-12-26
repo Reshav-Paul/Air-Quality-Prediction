@@ -6,12 +6,11 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 class multi_lin_reg_engine:
-    def __init__(self, filename, col_list, target_y, test_size, degree):
+    def __init__(self, filename, col_list, target_y, test_size):
         self.filename = filename
         self.col_list = col_list
         self.target_y = target_y
         self.test_size = test_size
-        self.degree = degree
         self.dataset = self.load_data()
         self.actual_values = []
         self.predicted_values = []
