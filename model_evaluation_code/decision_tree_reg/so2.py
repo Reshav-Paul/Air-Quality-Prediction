@@ -4,7 +4,7 @@ sys.path.append(os.path.abspath('..\\utility_modules'))
 from metric_wrapper import metric_wrapper
 from tree_engine import tree_engine
 
-col_list = ['D-1 SO2']
+col_list = ['SO2']
 target = ['SO2']
 test_size = 0.2
 file_name = '..\\data\\merged_new.csv'

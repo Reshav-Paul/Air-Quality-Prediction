@@ -22,12 +22,22 @@ class forest:
         return data.iloc[:2372, : ]
 
     def run_engine(self):
-        X = self.dataset[self.col_list]
-        y = self.dataset[self.target_y]
+        X = self.dataset[self.col_list][:-1]
+        y = self.dataset[self.target_y][1:]
         
         #Split the entire set into training and test set
         
-        x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
+        #x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
+        
+        train_length = round(X.shape[0] * (1 - self.test_size))
+        
+        x_train = X[:train_length]
+        y_train = y[:train_length]
+        x_test = X[train_length:]
+        y_test = y[train_length:]
+        
+        
+        
         xx_train = np.array(x_train)
         yy_train = np.array(y_train)
         xx_test = np.array(x_test)

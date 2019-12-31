@@ -4,13 +4,13 @@ sys.path.append(os.path.abspath('..\\utility_modules'))
 from metric_wrapper import metric_wrapper
 from forest_engine import forest
 
-colList = ['D-1 PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature',
-           'Pressure Station Level', 'Horizontal Visibility']
+colList = ['PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature',
+           'Pressure Station Level', 'Horizontal Visibility', 'Year']
 target = ['PM10']
 
 test_size = 0.2
 file_name = '..\\data\\merged_new.csv'
-no_of_trees = 30
+no_of_trees = 50
 
 n_times_run = 50
 

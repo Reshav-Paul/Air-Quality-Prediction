@@ -2,60 +2,62 @@ PM10
 __________________________________________________________
 
 important paramters:
-'D-1 PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature', 'Pressure Station Level', 'Horizontal Visibility'
+'PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature',
+'Pressure Station Level', 'Horizontal Visibility', 'Year'
 
 runs: 50
-no of trees: 30
+no of trees: 50
 
-average mae :  19.35877392280702
-average rmse :  27.59822320732495
-average accuracy :  65.70105263157893
-average score :  0.8701480609489061
+average mae :  16.59911475949367
+average rmse :  23.620422367909637
+average accuracy :  70.38396624472574
+average score :  0.9061906130748646
 
 least mae model:
-mae:  17.04700842105263
-rmse:  23.244441505853917
-accuracy:  70.3157894736842
+mae:  16.30362067510549
+rmse:  23.026011764685315
+accuracy:  70.042194092827
 
 least rmse model:
-mae:  17.04700842105263
-rmse:  23.244441505853917
-accuracy:  70.3157894736842
+mae:  16.30362067510549
+rmse:  23.026011764685315
+accuracy:  70.042194092827
 
 greatest accuracy model:
-mae:  17.04700842105263
-rmse:  23.244441505853917
-accuracy:  70.3157894736842
+mae:  16.685719831223633
+rmse:  23.896354261290515
+accuracy:  72.36286919831224
 ___________________________________________________________
 
 NO2
 ___________________________________________________________
 
 Important parameters:
-'D-1 NO2', 'Day No.', 'Air Temperature', 'Pressure Station Level', 'Relative Humidity', 'Horizontal Visibility', 'D-1 PM10'
+'NO2', 'Day No.', 'Air Temperature', 'Pressure Station Level',
+'Relative Humidity', 'Horizontal Visibility', 'Year', 'D-1 NO2'
 
 runs: 50
 no of trees: 30
 
-average mae :  7.221109192982458
-average rmse :  11.611827428594902
-average accuracy :  73.93263157894737
-average score :  0.7933641897640007
+average mae :  4.425565921237693
+average rmse :  6.207861803764079
+average accuracy :  87.21097046413503
+average score :  0.8463996600624182
 
 least mae model:
-mae:  6.309971228070175
-rmse:  9.685150463666512
-accuracy:  78.73684210526316
+mae:  4.290962025316455
+rmse:  6.044134502103046
+accuracy:  86.70886075949366
 
 least rmse model:
-mae:  6.309971228070175
-rmse:  9.685150463666512
-accuracy:  78.73684210526316
+mae:  4.307943741209564
+rmse:  5.998153467578852
+accuracy:  87.76371308016878
 
 greatest accuracy model:
-mae:  6.309971228070175
-rmse:  9.685150463666512
-accuracy:  78.73684210526316
+mae:  4.311195499296765
+rmse:  6.119455011179431
+accuracy:  88.81856540084388
 
 __________________________________________________________
 
@@ -63,27 +65,27 @@ SO2
 __________________________________________________________
 
 Important parameters:
-'D-1 SO2', 'Day No.', 'Air Temperature', 'Pressure Station Level', 'Year'
+'SO2', 'Day No.', 'Air Temperature', 'Pressure Station Level','Year', 'D-1 SO2'
 
 runs: 50
 no of trees: 30
 
-average mae :  1.8609097964912282
-average rmse :  3.248150313971992
-average accuracy :  52.345263157894735
-average score :  0.4343755511631878
+average mae :  1.4238136568213784
+average rmse :  1.905384391922582
+average accuracy :  49.957805907173004
+average score :  0.6873892774634246
 
 least mae model:
-mae:  1.6079817543859651
-rmse:  2.499921994853215
-accuracy:  58.10526315789474
+mae:  1.3556174402250352
+rmse:  1.8123979988758305
+accuracy:  52.53164556962025
 
 least rmse model:
-mae:  1.6079817543859651
-rmse:  2.499921994853215
-accuracy:  58.10526315789474
+mae:  1.3556174402250352
+rmse:  1.8123979988758305
+accuracy:  52.53164556962025
 
 greatest accuracy model:
-mae:  1.6079817543859651
-rmse:  2.499921994853215
-accuracy:  58.10526315789474
+mae:  1.3754662447257384
+rmse:  1.8923083571815575
+accuracy:  55.06329113924051

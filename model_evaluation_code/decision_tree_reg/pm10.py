@@ -4,7 +4,7 @@ sys.path.append(os.path.abspath('..\\utility_modules'))
 from metric_wrapper import metric_wrapper
 from tree_engine import tree_engine
 
-col_list = ['D-1 PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility',
+col_list = ['PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility',
            'Relative Humidity']
 target = ['PM10']
 test_size = 0.2

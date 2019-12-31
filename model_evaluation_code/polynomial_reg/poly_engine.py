@@ -9,7 +9,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 class poly_engine:
-    def __init__(self, filename, col_list, target_y, test_size, degree):
+    def __init__(self, filename, col_list, target_y, test_size = 0.2, degree = 2):
         self.filename = filename
         self.col_list = col_list
         self.target_y = target_y
@@ -25,13 +25,20 @@ class poly_engine:
         return data.iloc[:2372, : ]
 
     def run_engine(self):
-        y = self.dataset[self.target_y].values
-        y = np.array(y)
-        X = self.dataset[self.col_list].values
-        X = np.array(X)
+        y = self.dataset[self.target_y][1:].values
+        X = self.dataset[self.col_list][:-1].values
 
         #split the entire set into training and test sets
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
+        #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
+        
+        train_length = round(X.shape[0] * (1 - self.test_size))
+        
+        X_train = np.array(X[:train_length])
+        y_train = np.array(y[:train_length])
+        X_test = np.array(X[train_length:])
+        y_test = np.array(y[train_length:])
+        
+        
         self.actual_values = y_test
         
         #fit the X parameters of the training set into a polynomial of degree d, best case d = 2

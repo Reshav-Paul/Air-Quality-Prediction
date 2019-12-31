@@ -4,13 +4,13 @@ sys.path.append(os.path.abspath('..\\utility_modules'))
 from metric_wrapper import metric_wrapper
 from tree_engine import tree_engine
 
-col_list = ['D-1 NO2', 'Day No.', 'Horizontal Visibility', 'Relative Humidity',
-            'Pressure Station Level']
+col_list = ['NO2', 'Day No.', 'Horizontal Visibility', 'Relative Humidity',
+            'Pressure Station Level', 'Dew Point Temperature', 'D-1 NO2','Year']
 target = ['NO2']
 test_size = 0.2
 file_name = '..\\data\\merged_new.csv'
 
-n_times_run = 50
+n_times_run = 100
 total_rmse = 0
 total_accuracy = 0
 total_score = 0
