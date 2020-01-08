@@ -6,7 +6,7 @@ import pandas as pd
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn import metrics
 from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
 
 class poly_engine:
     def __init__(self, filename, col_list, target_y, test_size = 0.2, degree = 2):
@@ -37,8 +37,7 @@ class poly_engine:
         y_train = np.array(y[:train_length])
         X_test = np.array(X[train_length:])
         y_test = np.array(y[train_length:])
-        
-        
+              
         self.actual_values = y_test
         
         #fit the X parameters of the training set into a polynomial of degree d, best case d = 2

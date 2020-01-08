@@ -4,8 +4,8 @@ sys.path.append(os.path.abspath('..\\utility_modules'))
 from metric_wrapper import metric_wrapper
 from forest_engine import forest
 
-colList = ['PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature',
-           'Pressure Station Level', 'Horizontal Visibility', 'Year']
+colList = ['PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature', 'Year',
+           'Pressure Station Level', 'Horizontal Visibility', 'Wind Speed']
 target = ['PM10']
 
 test_size = 0.2

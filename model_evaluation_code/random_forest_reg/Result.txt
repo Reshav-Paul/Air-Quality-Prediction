@@ -2,31 +2,31 @@ PM10
 __________________________________________________________
 
 important paramters:
-'PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature',
-'Pressure Station Level', 'Horizontal Visibility', 'Year'
+'PM10', 'Day No.', 'Air Temperature', 'Dew Point Temperature', 'Year',
+'Pressure Station Level', 'Horizontal Visibility', 'Wind Speed'
 
 runs: 50
 no of trees: 50
 
-average mae :  16.59911475949367
-average rmse :  23.620422367909637
-average accuracy :  70.38396624472574
-average score :  0.9061906130748646
+average mae :  16.225782894514772
+average rmse :  22.869766860864388
+average accuracy :  71.17299578059074
+average score :  0.912054680474435
 
 least mae model:
-mae:  16.30362067510549
-rmse:  23.026011764685315
-accuracy:  70.042194092827
+mae:  15.778762447257389
+rmse:  22.33342165975292
+accuracy:  72.15189873417721
 
 least rmse model:
-mae:  16.30362067510549
-rmse:  23.026011764685315
-accuracy:  70.042194092827
+mae:  15.900234177215193
+rmse:  22.17041109069047
+accuracy:  73.62869198312237
 
 greatest accuracy model:
-mae:  16.685719831223633
-rmse:  23.896354261290515
-accuracy:  72.36286919831224
+mae:  15.900234177215193
+rmse:  22.17041109069047
+accuracy:  73.62869198312237
 ___________________________________________________________
 
 NO2

@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 from sklearn import metrics
 
@@ -24,8 +22,7 @@ class tree_engine:
         X = self.dataset[self.col_list][:-1]
         y = self.dataset[self.target_y][1:]
         
-        #Split the entire set into training and test set
-        
+        #Split the entire set into training and test set      
         #x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
         train_length = round(X.shape[0] * (1 - self.test_size))
         
@@ -40,7 +37,6 @@ class tree_engine:
         yy_test = np.array(y_test)
         self.actual_values = yy_test
         self.test_values = xx_test
-        #print(self.actual_values.shape)
         
         #Fitting the decision tree regression to the data set
         

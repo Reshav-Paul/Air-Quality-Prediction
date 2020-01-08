@@ -5,7 +5,7 @@ from metric_wrapper import metric_wrapper
 from tree_engine import tree_engine
 
 col_list = ['PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility',
-           'Relative Humidity']
+           'Relative Humidity', 'Wind Speed']
 target = ['PM10']
 test_size = 0.2
 file_name = '..\\data\\merged_new.csv'

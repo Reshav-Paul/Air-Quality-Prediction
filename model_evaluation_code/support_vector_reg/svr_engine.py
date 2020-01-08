@@ -4,9 +4,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
-from sklearn.model_selection import train_test_split
 from sklearn import metrics
-import matplotlib.pyplot as plt
+#from sklearn.model_selection import train_test_split
 
 class svr_engine:
     
@@ -26,13 +25,19 @@ class svr_engine:
        return data.iloc[:2372, : ]
     
     def run_engine(self):
-        y = self.dataset[self.target_y].values
-        y = np.array(y)
-        X = self.dataset[self.col_list].values
-        X = np.array(X)
+        y = self.dataset[self.target_y][1:].values
+        X = self.dataset[self.col_list][:-1].values
 
         #split the entire set into training and test sets
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
+        #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
+        
+        train_length = round(X.shape[0] * (1 - self.test_size))
+        
+        X_train = np.array(X[:train_length])
+        y_train = np.array(y[:train_length])
+        X_test = np.array(X[train_length:])
+        y_test = np.array(y[train_length:])
+        
         self.actual_values = y_test
         self.actual_values = self.actual_values.flatten()
         y_train = y_train.reshape(-1, 1)
