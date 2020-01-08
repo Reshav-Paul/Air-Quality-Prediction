@@ -1,0 +1,40 @@
+PM10
+________________________________________________________________________
+
+important parameters:
+'PM10', 'D-1 PM10', 'Air Temperature', 'Horizontal Visibility',
+'Dew Point Temperature', 'Wind Speed', 'Relative Humidity'
+
+best model:
+mae:  15.438648244022087
+rmse:  21.777301847966022
+accuracy:  74.89451476793249
+score:  0.9202672017997162
+________________________________________________________________________
+
+NO2
+________________________________________________________________________
+
+important parameters:
+'NO2', 'Pressure Station Level', 'Dew Point Temperature',
+'Relative Humidity', 'Day No.', 'D-1 NO2', 'Date_n'
+
+best model:
+mae:  4.135027179874472
+rmse:  5.639339326801797
+accuracy:  90.084388185654
+score:  0.8733023945330972
+________________________________________________________________________
+
+SO2
+________________________________________________________________________
+
+important parameters:
+'SO2', 'Day No.', 'D-1 SO2', 'Pressure Station Level', 'Wind Speed',
+'Relative Humidity'
+
+best model:
+mae:  1.099635819241449
+rmse:  1.5065635610624826
+accuracy:  59.91561181434599
+score:  0.8046721185132589

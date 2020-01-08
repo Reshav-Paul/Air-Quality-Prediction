@@ -1,0 +1,69 @@
+PM10
+__________________________________________________________
+
+Important parameters:
+'PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility',
+'Relative Humidity', 'Wind Speed'
+runs: 100
+
+average mae :  22.960307805907178
+average rmse :  32.956844078255294
+average accuracy :  56.38818565400843
+average score :  0.8173216561279035
+
+least mae model:
+mae:  22.121476793248945
+rmse:  31.930339599193605
+accuracy:  58.22784810126582
+
+least rmse model:
+mae:  22.359430379746836
+rmse:  31.923438749000418
+accuracy:  58.86075949367089
+
+greatest accuracy model:
+mae:  22.340822784810126
+rmse:  32.20090333730401
+accuracy:  59.07172995780591
+__________________________________________________________
+
+NO2
+__________________________________________________________
+
+Important parameters:
+'NO2', 'Day No.', 'Horizontal Visibility', 'Relative Humidity',
+'Pressure Station Level', 'Dew Point Temperature', 'D-1 NO2','Year'
+runs: 100
+
+average mae :  6.4021259493670915
+average rmse :  8.947647706932521
+average accuracy :  73.86286919831224
+average score :  0.6809382338858927
+
+least mae model:
+mae:  6.112763713080168
+rmse:  8.459937918097216
+accuracy:  75.31645569620254
+
+least rmse model:
+mae:  6.112763713080168
+rmse:  8.459937918097216
+accuracy:  75.31645569620254
+
+greatest accuracy model:
+mae:  6.182552742616033
+rmse:  8.780263072383034
+accuracy:  75.9493670886076
+___________________________________________________________
+
+SO2
+___________________________________________________________
+
+important parameter: 'SO2'
+Very poor result
+
+best model:
+mae:  2.1466402953586496
+rmse:  3.562290454162451
+accuracy:  39.24050632911392
+score:  -0.0920637111868361

@@ -1,0 +1,42 @@
+PM10
+__________________________________________________________________________________________
+Parameters with most importance:
+'PM10', 'Day No.', 'Air Temperature', 'Horizontal Visibility',
+'Dew Point Temperature', 'Year'
+
+optimum degree: 2
+
+best model:
+mae:  14.318079513545921
+rmse:  19.236547120736326
+accuracy:  71.30801687763713
+score:  0.9377867190228699
+__________________________________________________________________________________________
+
+NO2
+__________________________________________________________________________________________
+Parameters with most importance:
+'NO2', 'Horizontal Visibility', 'Relative Humidity','Pressure Station Level',
+'D-1 NO2'
+
+optimum degree: 2
+
+best model:
+mae:  4.124541376377908
+rmse:  5.614974931057798
+accuracy:  89.66244725738397
+score:  0.8743948069677835
+__________________________________________________________________________________________
+
+SO2
+__________________________________________________________________________________________
+Parameters with most importance:
+'SO2', 'Day No.', 'D-1 SO2', 'Year'
+
+optimum degree: 2 (higher degrees have no impact, negative or positive)
+
+best model:
+mae:  1.1728115968489754
+rmse:  1.6110742548967887
+accuracy:  60.337552742616026
+score:  0.7766322667496378
