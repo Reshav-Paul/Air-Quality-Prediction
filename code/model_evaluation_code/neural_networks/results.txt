@@ -1,0 +1,145 @@
+1. PM10
+
+MLP______________________________________________
+
+
+WIDE DEEP MLP____________________________________
+
+Deep params: 'Day No.', 'Air Temperature', 'Wind Speed','D-1 PM10',
+             'Relative Humidity', 'PM10'
+Wide params: 'D-1 PM10', 'PM10'
+hidden layers: 30(relu), 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  14.89060119337337
+mse:  436.22295769938563
+rmse:  20.885951204084186
+score:  0.9270315012222125
+accuracy:  0.7409766454352441
+
+LSTM_____________________________________________
+
+params: 'PM10', 'Air Temperature', 'D-1 PM10', 'Pressure Station Level',
+	'Wind Speed', 'Relative Humidity'
+hidden layers: 30(relu), 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  14.93707542273649
+mse:  442.1070453468686
+rmse:  21.026341701467437
+score:  0.9260472498554844
+accuracy:  0.7537154989384289
+
+GRU______________________________________________
+
+params: 'PM10', 'Air Temperature', 'Pressure Station Level',
+          'D-1 PM10', 'Wind Speed', 'Relative Humidity'
+hidden layers: 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  15.112808890373083
+mse:  444.0951567704064
+rmse:  21.07356535497509
+score:  0.9257146916913208
+accuracy:  0.7282377919320594
+=========================================================================================
+2. NO2
+
+MLP______________________________________________
+
+
+WIDE DEEP MLP____________________________________
+
+Deep params: 'D-1 NO2', 'NO2', 'Wind Speed', 'Dew Point Temperature', 'Air Temperature',
+            'Pressure Station Level', 'Relative Humidity', 'Year'
+Wide params: 'NO2'
+hidden layers: 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  4.096699334729756
+mse:  30.468830649690844
+rmse:  5.5198578468734905
+score:  0.8793601035129965
+accuracy:  0.8895966029723992
+
+LSTM_____________________________________________
+params: 'NO2', 'D-1 NO2', 'Dew Point Temperature', 'Wind Speed', 'Air Temperature',
+        'Pressure Station Level', 'Relative Humidity', 'Year'
+hidden layers: 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  4.001263001719352
+mse:  31.039367612306656
+rmse:  5.5712985570966
+score:  0.8771010893452612
+accuracy:  0.9087048832271762
+
+GRU______________________________________________
+params: 'NO2', 'D-1 NO2', 'Dew Point Temperature', 'Wind Speed', 'Air Temperature',
+        'Pressure Station Level', 'Relative Humidity', 'Year'
+hidden layers: 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  4.023310860311909
+mse:  30.380575207133475
+rmse:  5.511857691117712
+score:  0.879709546771156
+accuracy:  0.9002123142250531
+
+=====================================================================================
+3. SO2
+
+MLP______________________________________________
+params: 'SO2', 'D-1 SO2', 'Dew Point Temperature', 'Relative Humidity'
+hidden layers: 10(relu), 10(relu)
+batch size: 32
+learning: Adam(0.001)
+
+mae:  1.1965268996009906
+mse:  2.527529987261389
+rmse:  1.589820740606119
+score:  0.7837514087987247
+accuracy:  0.5626326963906582
+
+Wide Deep MLP____________________________________
+Deep params: 'SO2', 'D-1 SO2'
+Wide params: 'SO2'
+hidden layers: 30(relu), 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  1.2265056345062906
+mse: 2.6702895649035914
+rmse:  1.620704229815195
+score:  0.77526821510993
+accuracy:  0.5520169851380042
+
+LSTM_____________________________________________
+params: 'SO2', 'D-1 SO2','Air Temperature', 'Pressure Station Level', 'Wind Speed'
+hidden layers: 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  1.1913472212449256
+mse:  2.4898277408184235
+rmse:  1.577918800451539
+score:  0.7869771104598348
+accuracy:  0.5732484076433121
+
+GRU______________________________________________
+params: 'SO2', 'D-1 SO2', 'Air Temperature', 'Relative Humidity', 'Wind Speed'
+hidden layers: 30(relu), 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
+
+mae:  1.1707022954450799
+mse:  2.466379879410096
+rmse:  1.5704712284566362
+score:  0.7889832457072062
+accuracy:  0.5498938428874734
