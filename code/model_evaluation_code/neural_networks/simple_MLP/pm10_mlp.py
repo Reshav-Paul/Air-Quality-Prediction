@@ -45,7 +45,7 @@ def get_plot(x_val, y_val):
 
 #importing dataset
 
-data_set = pd.read_csv('../data/merged_new.csv')
+data_set = pd.read_csv('../../data/merged_new.csv')
 data_set.head(3)
 
 #selecting independent and dependent/target attributes
