@@ -45,12 +45,12 @@ def get_plot(x_val, y_val):
 
 #importing dataset
 
-data_set = pd.read_csv('../data/merged_new.csv')
+data_set = pd.read_csv('../../data/merged_new.csv')
 data_set.head(3)
 
 #selecting independent and dependent/target attributes
 
-indep_list = ['Pressure Station Level', 'Relative Humidity', 'Horizontal Visibility', 'Year', 'D-1 NO2', 'D-1 SO2', 'D-1 PM10','Day No.' 'NO2']
+indep_list = ['Pressure Station Level', 'Relative Humidity', 'Horizontal Visibility', 'Year', 'D-1 NO2', 'D-1 SO2', 'D-1 PM10', 'Day No.', 'NO2']
 dep_list = ['NO2']
 
 #setting up independent and dependent/target variables
