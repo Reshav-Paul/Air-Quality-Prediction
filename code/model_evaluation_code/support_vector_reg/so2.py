@@ -7,8 +7,7 @@ from svr_engine import svr_engine
 from metric_wrapper import metric_wrapper
 
 filename = "..\data\merged_new.csv"
-col_list = ['SO2', 'Day No.', 'D-1 SO2', 'Pressure Station Level', 'Wind Speed',
-            'Relative Humidity'];
+col_list = ['SO2', 'Day No.', 'D-1 SO2', 'Pressure Station Level', 'Relative Humidity'];
 target_y = ['SO2']
 test_size = 0.2
 kernel = 'rbf'

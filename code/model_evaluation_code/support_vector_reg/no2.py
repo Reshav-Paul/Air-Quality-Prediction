@@ -8,7 +8,7 @@ from metric_wrapper import metric_wrapper
 
 filename = '..\\data\\merged_new.csv'
 col_list = ['NO2', 'Pressure Station Level', 'Dew Point Temperature',
-            'Relative Humidity', 'Day No.', 'D-1 NO2', 'Date_n'];
+            'Relative Humidity', 'Day No.', 'D-1 NO2', 'Horizontal Visibility'];
 kernel = 'rbf'
 target_y = ['NO2']
 test_size = 0.2
