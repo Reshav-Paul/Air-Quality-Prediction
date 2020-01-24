@@ -2,6 +2,17 @@
 
 MLP______________________________________________
 
+params: 'Air Temperature', 'Relative Humidity', 'Horizontal Visibility', 'Year', 'D-1 PM10', 'Day No.', 'PM10'
+
+'''model structure :(Three hidden layers having 75 neurons for each,
+activation function for all hidden layers : rectifier(relu),
+epoch value: 200, optimizer function : lbfgs, learning rate : 0.003 and batch size : 28)'''
+
+mae:  13.44594115499175
+mse:  376.5135408048915
+rmse:  19.403956833720578
+score:  0.9366991613469156
+accuracy:  0.7472995780590718
 
 WIDE DEEP MLP____________________________________
 
@@ -50,6 +61,17 @@ accuracy:  0.7282377919320594
 
 MLP______________________________________________
 
+params: 'Pressure Station Level', 'Relative Humidity', 'Horizontal Visibility', 'Year', 'D-1 NO2', 'D-1 SO2', 'D-1 PM10','Day No.', 'NO2'
+
+'''model structure :(Three hidden layers having 100 neurons for each,
+activation function for all hidden layers : rectifier(relu),
+epoch value: 150, optimizer function : lbfgs, learning rate : 0.009 and batch size : 28)'''
+
+mae: 3.984749163729597  
+mse: 30.3133721012788
+rmse: 5.581954119851265
+score: 0.8753299831990325
+accuracy: 0.9039662447257383
 
 WIDE DEEP MLP____________________________________
 
