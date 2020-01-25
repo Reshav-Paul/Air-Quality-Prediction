@@ -46,6 +46,7 @@ model.add(keras.layers.GRU(30, input_shape = (1, X_train.shape[1:][1]),
                            activation = 'relu', recurrent_activation = 'relu',
                            return_sequences = True))
 model.add(keras.layers.GRU(30, activation = 'relu', recurrent_activation = 'relu', return_sequences = True))
+model.add(keras.layers.GRU(30, activation = 'relu', recurrent_activation = 'relu', return_sequences = True))
 model.add(keras.layers.Dense(1))
 
 model.compile(loss = 'mean_squared_error', optimizer = keras.optimizers.Adam(0.001))

@@ -47,15 +47,15 @@ GRU______________________________________________
 
 params: 'PM10', 'Air Temperature', 'Pressure Station Level',
           'D-1 PM10', 'Wind Speed', 'Relative Humidity'
-hidden layers: 30(relu), 30(relu)
+hidden layers: 30(relu), 30(relu), 30(relu)
 batch size: 28
 learning: Adam(0.001)
 
-mae:  15.112808890373083
-mse:  444.0951567704064
-rmse:  21.07356535497509
-score:  0.9257146916913208
-accuracy:  0.7282377919320594
+mae:  14.92415830381357
+mse:  425.1735462322925
+rmse:  20.619736812876457
+score:  0.9288797738839357
+accuracy:  0.7537154989384289
 =========================================================================================
 2. NO2
 
