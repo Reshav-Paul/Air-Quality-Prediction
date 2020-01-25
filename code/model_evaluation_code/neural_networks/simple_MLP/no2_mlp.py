@@ -7,19 +7,19 @@ from sklearn.neural_network import MLPRegressor
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
-def get_performance(x_val, y_val):
+def get_performance(model, x_val, y_val):
     #mean absolute error calculation
-    mae = metrics.mean_absolute_error(y_val, nn.predict(x_val))
+    mae = metrics.mean_absolute_error(y_val, model.predict(x_val))
     #mean squared error calculation
-    mse = metrics.mean_squared_error(y_val, nn.predict(x_val))
+    mse = metrics.mean_squared_error(y_val, model.predict(x_val))
     #score calculation
-    rsq = metrics.r2_score(y_val, nn.predict(x_val))
+    rsq = metrics.r2_score(y_val, model.predict(x_val))
     return (mae, mse, rsq)
 
-def get_accuracy(xx_test, yy_test):
+def get_accuracy(model, xx_test, yy_test):
     #accuracy calculation(number of predictions having less than 20% error)
     actual_val = yy_test
-    predicted_val = nn.predict(xx_test)
+    predicted_val = model.predict(xx_test)
     predicted_val = predicted_val.reshape(predicted_val.shape[0], 1)
     error_val = predicted_val - actual_val
     count = []
@@ -28,9 +28,9 @@ def get_accuracy(xx_test, yy_test):
         count.append(abs(error_val[i]))
     return(len(count) / len(error_val) * 100)
 
-def get_plot(x_val, y_val):
+def get_plot(model, x_val, y_val):
     #visualizing performance
-    y_pred = nn.predict(x_val)
+    y_pred = model.predict(x_val)
     x = np.arange(len(y_val))
     plt.figure(figsize = (10, 10))
     plt.scatter(x, y_val, label = "actual", c = "b", s = 100)
@@ -96,7 +96,7 @@ nn.fit(xx_train, yy_train)
 
 #evaluating performance of the model on training set
 
-mae, mse, rsq = get_performance(xx_train, yy_train)
+mae, mse, rsq = get_performance(nn, xx_train, yy_train)
 
 #showing performance on training set
 
@@ -104,7 +104,7 @@ print(mae, mse, rsq)
 
 #evaluating performance of the model on test set
 
-maet, mset, rsqt = get_performance(xx_test, yy_test)
+maet, mset, rsqt = get_performance(nn, xx_test, yy_test)
 
 #showing performance on test set
 
@@ -112,11 +112,11 @@ print(maet, mset, rsqt)
 
 #visualizing performance on traing set
 
-get_plot(xx_train, yy_train)
+get_plot(nn, xx_train, yy_train)
 
 #visualizing performance on test set
 
-get_plot(xx_test, yy_test)
+get_plot(nn, xx_test, yy_test)
 
 #prediction
 
@@ -124,6 +124,6 @@ predicted_val = nn.predict(xx_test)
 
 #accuracy of prediction
 
-acc = get_accuracy(xx_test, yy_test)
+acc = get_accuracy(nn, xx_test, yy_test)
 
 
