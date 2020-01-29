@@ -20,7 +20,8 @@ def print_metrics(pred, y_vals):
 
 data = pd.read_csv('../../data/merged_new.csv')
 
-X = data[['PM10', 'Air Temperature', 'D-1 PM10', 'Pressure Station Level', 'Wind Speed', 'Relative Humidity']][:-1]
+X = data[['PM10', 'Air Temperature', 'D-1 PM10', 'Pressure Station Level',
+          'Wind Speed', 'Relative Humidity', 'Horizontal Visibility', 'Year']][:-1]
 y = data[['PM10']][1:]
 
 X_train = np.array(X[:1900])

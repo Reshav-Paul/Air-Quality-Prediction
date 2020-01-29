@@ -20,7 +20,8 @@ def print_metrics(predictions, y_test):
 
 data = pd.read_csv('../../data/merged_new.csv')
 
-X_a = data[['Day No.', 'Air Temperature', 'Wind Speed','D-1 PM10', 'Relative Humidity', 'PM10']][:-1]
+X_a = data[['Day No.', 'Air Temperature', 'Wind Speed','D-1 PM10',
+            'Relative Humidity', 'PM10','Horizontal Visibility', 'Year']][:-1]
 X_b = data[['D-1 PM10', 'PM10']][:-1]
 y = data[['PM10']][1:]
 

@@ -16,62 +16,62 @@ accuracy:  0.7472995780590718
 
 WIDE DEEP MLP____________________________________
 
-Deep params: 'Day No.', 'Air Temperature', 'Wind Speed','D-1 PM10',
-             'Relative Humidity', 'PM10'
+Deep params: 'Day No.', 'Air Temperature', 'Wind Speed', 'D-1 PM10',
+'Relative Humidity', 'PM10', 'Horizontal Visibility', 'Year'
 Wide params: 'D-1 PM10', 'PM10'
 hidden layers: 30(relu), 30(relu), 30(relu)
 batch size: 28
 learning: Adam(0.001)
 
-mae:  14.89060119337337
-mse:  436.22295769938563
-rmse:  20.885951204084186
-score:  0.9270315012222125
-accuracy:  0.7409766454352441
+mae:  14.473772611840769
+mse:  384.6950429670436
+rmse:  19.613644306121277
+score:  0.9356507508898558
+accuracy:  0.7346072186836518
 
 LSTM_____________________________________________
 
 params: 'PM10', 'Air Temperature', 'D-1 PM10', 'Pressure Station Level',
-	'Wind Speed', 'Relative Humidity'
+'Wind Speed', 'Relative Humidity', 'Horizontal Visibility', 'Year'
 hidden layers: 30(relu), 30(relu), 30(relu)
 batch size: 28
 learning: Adam(0.001)
 
-mae:  14.93707542273649
-mse:  442.1070453468686
-rmse:  21.026341701467437
-score:  0.9260472498554844
-accuracy:  0.7537154989384289
+mae:  14.76915469677838
+mse:  386.02016708010586
+rmse:  19.647395936360265
+score:  0.9354290928695298
+accuracy:  0.721868365180467
 
 GRU______________________________________________
 
-params: 'PM10', 'Air Temperature', 'Pressure Station Level',
-          'D-1 PM10', 'Wind Speed', 'Relative Humidity'
+params: 'PM10', 'Air Temperature', 'Pressure Station Level', 'D-1 PM10',
+'Wind Speed', 'Relative Humidity', 'Horizontal Visibility', 'Year'
 hidden layers: 30(relu), 30(relu), 30(relu)
 batch size: 28
 learning: Adam(0.001)
 
-mae:  14.92415830381357
-mse:  425.1735462322925
-rmse:  20.619736812876457
-score:  0.9288797738839357
-accuracy:  0.7537154989384289
+mae:  14.570005656442826
+mse:  382.97113784453614
+rmse:  19.56964838326269
+score:  0.935939114366845
+accuracy:  0.7367303609341825
 =========================================================================================
 2. NO2
 
 MLP______________________________________________
 
-params: 'Pressure Station Level', 'Relative Humidity', 'Horizontal Visibility', 'Year', 'D-1 NO2', 'D-1 SO2', 'D-1 PM10','Day No.', 'NO2'
+params: 'NO2', 'D-1 NO2', 'Dew Point Temperature', 'Horizontal Visibility',
+	'Relative Humidity', 'Year', 'Wind Speed'
+hidden layers: 30(relu), 30(relu)
+batch size: 28
+learning: Adam(0.001)
 
-'''model structure :(Three hidden layers having 100 neurons for each,
-activation function for all hidden layers : rectifier(relu),
-epoch value: 150, optimizer function : lbfgs, learning rate : 0.009 and batch size : 28)'''
-
-mae: 3.984749163729597  
-mse: 30.3133721012788
-rmse: 5.581954119851265
-score: 0.8753299831990325
-accuracy: 0.9039662447257383
+mae:  4.008985176977332
+rmse:  5.44157487505731
+mse:  29.61073712085498
+score:  0.882757684328786
+accuracy:  0.8874734607218684
 
 WIDE DEEP MLP____________________________________
 
