@@ -6,10 +6,10 @@ important parameters:
 'Dew Point Temperature', 'Wind Speed', 'Relative Humidity'
 
 best model:
-mae:  15.438648244022087
-rmse:  21.777301847966022
-accuracy:  74.89451476793249
-score:  0.9202672017997162
+mae:  15.472810642043173
+rmse:  21.81254604747119
+accuracy:  75.10548523206751
+score:  0.920008915203651
 ________________________________________________________________________
 
 NO2
@@ -17,24 +17,23 @@ ________________________________________________________________________
 
 important parameters:
 'NO2', 'Pressure Station Level', 'Dew Point Temperature',
-'Relative Humidity', 'Day No.', 'D-1 NO2', 'Date_n'
+'Relative Humidity', 'Day No.', 'D-1 NO2', 'Horizontal Visibility'
 
 best model:
-mae:  4.135027179874472
-rmse:  5.639339326801797
-accuracy:  90.084388185654
-score:  0.8733023945330972
+mae:  4.143416362968869
+rmse:  5.606400141056014
+accuracy:  89.0295358649789
+score:  0.8747781446597948
 ________________________________________________________________________
 
 SO2
 ________________________________________________________________________
 
 important parameters:
-'SO2', 'Day No.', 'D-1 SO2', 'Pressure Station Level', 'Wind Speed',
-'Relative Humidity'
+'SO2', 'Day No.', 'D-1 SO2', 'Pressure Station Level', 'Relative Humidity'
 
 best model:
-mae:  1.099635819241449
-rmse:  1.5065635610624826
-accuracy:  59.91561181434599
-score:  0.8046721185132589
+mae:  1.1018033774021232
+rmse:  1.5039570314236737
+accuracy:  59.49367088607595
+score:  0.8053474136025184

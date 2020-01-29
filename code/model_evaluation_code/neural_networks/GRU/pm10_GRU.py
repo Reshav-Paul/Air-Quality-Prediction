@@ -1,14 +1,9 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import StandardScaler
 from sklearn import metrics
 
 from tensorflow import keras
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import LSTM
 
 def print_metrics(pred, y_vals):
     print('mae: ', metrics.mean_absolute_error(y_vals, pred))
@@ -25,8 +20,8 @@ def print_metrics(pred, y_vals):
 
 data = pd.read_csv('../../data/merged_new.csv')
 
-X = data[['PM10', 'Air Temperature', 'Pressure Station Level',
-          'D-1 PM10', 'Wind Speed', 'Relative Humidity']][:-1]
+X = data[['PM10', 'Air Temperature', 'Pressure Station Level', 'D-1 PM10',
+          'Wind Speed', 'Relative Humidity', 'Horizontal Visibility', 'Year']][:-1]
 y = data[['PM10']][1:]
 
 X_train = np.array(X[:1900])
@@ -46,12 +41,13 @@ model.add(keras.layers.GRU(30, input_shape = (1, X_train.shape[1:][1]),
                            activation = 'relu', recurrent_activation = 'relu',
                            return_sequences = True))
 model.add(keras.layers.GRU(30, activation = 'relu', recurrent_activation = 'relu', return_sequences = True))
+model.add(keras.layers.GRU(30, activation = 'relu', recurrent_activation = 'relu', return_sequences = True))
 model.add(keras.layers.Dense(1))
 
 model.compile(loss = 'mean_squared_error', optimizer = keras.optimizers.Adam(0.001))
 
 es_callback = keras.callbacks.EarlyStopping(patience = 10, restore_best_weights = False)
-history = model.fit(X_train, y_train, validation_split = 0.1, epochs = 10, verbose = 0, batch_size = 28,
+history = model.fit(X_train, y_train, validation_split = 0.1, epochs = 50, verbose = 0, batch_size = 28,
                     callbacks = [es_callback])
 
 predictions = model.predict(X_test)
