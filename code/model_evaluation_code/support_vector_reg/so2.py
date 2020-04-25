@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# This module runs the SVR engine for SO2
 
 import sys, os
 sys.path.append(os.path.abspath('..\\utility_modules'))

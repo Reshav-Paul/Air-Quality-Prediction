@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#this module runs the polynomial regression engine for SO2
+
 import sys, os
 sys.path.append(os.path.abspath('..\\utility_modules'))
 

@@ -1,3 +1,9 @@
+# This module uses the selenium library to scrape meterological data from 
+# https://rp5.ru/Weather_archive_in_Kolkata,_Dum_Dum_(airport),_METAR
+# with the date given as input
+# NOTE: scraping is done in headless mode and requires either Google Chrome
+# or Mozilla Firefox installed on the system
+
 import sys, os
 root_path = __file__.split('\\')[:-1]
 root_path = '\\'.join(root_path)

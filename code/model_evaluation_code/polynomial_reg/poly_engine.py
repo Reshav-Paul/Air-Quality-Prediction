@@ -1,12 +1,12 @@
-#!/usr/bin/env python
-# coding: utf-8
+# this module that takes in the the input parameters, trains a 
+# polynomial regression algorithm on the dataset
+# and produces the predictions on the test set and provides the error metrics
 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn import metrics
 from sklearn.linear_model import LinearRegression
-#from sklearn.model_selection import train_test_split
 
 class poly_engine:
     def __init__(self, filename, col_list, target_y, test_size = 0.2, degree = 2):
@@ -29,10 +29,8 @@ class poly_engine:
         X = self.dataset[self.col_list][:-1].values
 
         #split the entire set into training and test sets
-        #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
         
         train_length = round(X.shape[0] * (1 - self.test_size))
-        
         X_train = np.array(X[:train_length])
         y_train = np.array(y[:train_length])
         X_test = np.array(X[train_length:])
@@ -43,13 +41,17 @@ class poly_engine:
         #fit the X parameters of the training set into a polynomial of degree d, best case d = 2
         poly_reg = PolynomialFeatures(degree = self.degree)
         X_poly = poly_reg.fit_transform(X_train)
-        
+
+	#create the model         
         lin_reg2 = LinearRegression()
+
         #fit the prediction model
         lin_reg2.fit(X_poly, y_train)
         
         X_transform = poly_reg.fit_transform(X_test)
         self.score = lin_reg2.score(X_transform, self.actual_values)
+
+	#make predictions
         self.predict(lin_reg2, X_transform)
         return lin_reg2
 

@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+# this module that takes in the the input parameters, trains a 
+# multi-variable linear regression algorithm on the dataset
+# and produces the predictions on the test set and provides the error metrics
+
 import numpy as np
 import pandas as pd
 from sklearn import metrics
@@ -25,22 +28,24 @@ class multi_lin_reg_engine:
         X = self.dataset[self.col_list][:-1].values
 
         #split the entire set into training and test sets
-        #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
         
         train_length = round(X.shape[0] * (1 - self.test_size))
-        
         X_train = np.array(X[:train_length])
         y_train = np.array(y[:train_length])
         X_test = np.array(X[train_length:])
         y_test = np.array(y[train_length:])
         
         self.actual_values = y_test
-        
+	
+	#create the model        
         lin_reg = LinearRegression()
+
         #fit the prediction model
         lin_reg.fit(X_train, y_train)
         
         self.score = lin_reg.score(X_test, self.actual_values)
+
+	#make predictions
         self.predict(lin_reg, X_test)
         return lin_reg
 

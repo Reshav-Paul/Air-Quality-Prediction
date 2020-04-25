@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
+#this module runs the polynomial regression engine for PM10
+
 import sys, os
 sys.path.append(os.path.abspath('..\\utility_modules'))
 

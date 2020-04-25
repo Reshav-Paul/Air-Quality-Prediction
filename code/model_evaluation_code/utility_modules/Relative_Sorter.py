@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+# This module sorts an array while maintaining an indices array
+# and moves its elements correspondingly while sorting the input array
+# In this way, a different array whose elements are related one to one
+# with the input array can access its elements in the sorted order of the input array
 
 #This program does the following-
 #There are n containers with elements from two arrays a and b

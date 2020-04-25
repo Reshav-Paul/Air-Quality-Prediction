@@ -1,3 +1,7 @@
+# This module takes a dataframe as input
+# and provides methods to load a saved model and get the SO2 prediction
+# from that model and returns the predictions
+
 import pandas as pd
 import numpy as np
 import json
@@ -102,7 +106,7 @@ class so2_predictor:
         
         return prediction.ravel()[0]
 
-
+# A working demo of this module
 # import sys, os
 # sys.path.append(os.path.abspath('../'))
 # from data_fetcher import data_fetcher

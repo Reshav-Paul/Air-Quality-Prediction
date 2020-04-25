@@ -1,11 +1,12 @@
-# -*- coding: utf-8 -*-
+# This module that takes in the the input parameters, trains a 
+# SVR algorithm on the dataset
+# and produces the predictions on the test set and provides the error metrics
 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 from sklearn import metrics
-#from sklearn.model_selection import train_test_split
 
 class svr_engine:
     
@@ -29,7 +30,6 @@ class svr_engine:
         X = self.dataset[self.col_list][:-1].values
 
         #split the entire set into training and test sets
-        #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
         
         train_length = round(X.shape[0] * (1 - self.test_size))
         
@@ -51,6 +51,8 @@ class svr_engine:
         #implement the model
         regressor = SVR(kernel = self.kernel)
         regressor.fit(X_fit, y_fit.ravel())
+
+	#make predictions
         predictions = scaler_y.inverse_transform(regressor.predict(scaler_X.transform(X_test)))
         self.predicted_values = predictions 
         self.predicted_values = self.predicted_values.flatten()

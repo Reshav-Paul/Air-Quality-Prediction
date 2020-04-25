@@ -1,3 +1,5 @@
+#this module runs the random forest regression engine for SO2
+
 import sys, os
 sys.path.append(os.path.abspath('..\\utility_modules'))
 
@@ -12,6 +14,7 @@ test_size = 0.2
 file_name = '..\\data\\merged_new.csv'
 no_of_trees = 30
 
+#number of times the algorithm is run and averaged over for analysis
 n_times_run = 50
 
 total_accuracy = 0
@@ -38,6 +41,7 @@ for i in range(n_times_run):
     total_accuracy += accuracy
     total_mae += mae
     
+    #find the best models on each metric
     if(mae < least_mae_model.mae):
         least_mae_model.copy(rmse, mae, accuracy, forest_regressor)
     if(rmse < least_rmse_model.rmse):
@@ -45,6 +49,7 @@ for i in range(n_times_run):
     if(accuracy > greatest_accuracy_model.accuracy):
         greatest_accuracy_model.copy(rmse, mae, accuracy, forest_regressor)
     
+#print the average performance metric for 50 runs
 print("average mae : ", total_mae / n_times_run)
 print("average rmse : ", total_rmse / n_times_run)
 print("average accuracy : ", total_accuracy / n_times_run)

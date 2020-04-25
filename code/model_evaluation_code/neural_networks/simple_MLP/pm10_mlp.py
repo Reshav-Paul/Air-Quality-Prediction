@@ -1,4 +1,5 @@
-#importing supporting packages
+# This module trains a Multi-layer perceptron model for PM10
+# and prints the error metrics
 
 import numpy as np
 import pandas as pd
@@ -10,8 +11,10 @@ import matplotlib.pyplot as plt
 def get_performance(model, x_val, y_val):
     #mean absolute error calculation
     mae = metrics.mean_absolute_error(y_val, model.predict(x_val))
+
     #mean squared error calculation
     mse = metrics.mean_squared_error(y_val, model.predict(x_val))
+
     #score calculation
     rsq = metrics.r2_score(y_val, model.predict(x_val))
     return (mae, mse, rsq)

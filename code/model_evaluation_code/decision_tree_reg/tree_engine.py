@@ -1,3 +1,7 @@
+# This module that takes in the the input parameters, trains a 
+# decision tree algorithm on the dataset
+# and produces the predictions on the test set and provides the error metrics
+
 import pandas as pd
 import numpy as np
 from sklearn.tree import DecisionTreeRegressor
@@ -23,7 +27,6 @@ class tree_engine:
         y = self.dataset[self.target_y][1:]
         
         #Split the entire set into training and test set      
-        #x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = self.test_size)
         train_length = round(X.shape[0] * (1 - self.test_size))
         
         x_train = X[:train_length]
@@ -38,11 +41,11 @@ class tree_engine:
         self.actual_values = yy_test
         self.test_values = xx_test
         
-        #Fitting the decision tree regression to the data set
-        
+        #Fitting the decision tree regression to the data set        
         regressor = DecisionTreeRegressor()
         regressor.fit(xx_train, yy_train)
         
+	#make predictions
         self.predict(regressor)
         return regressor
 
@@ -70,6 +73,7 @@ class tree_engine:
         return rmsle
 
     def get_prediction_accuracy(self):
+	# accuracy calculation(number of predictions having less than 20% error)
         y_error = self.predicted_values - self.actual_values
         count = []
         for i in range(len(self.actual_values)):

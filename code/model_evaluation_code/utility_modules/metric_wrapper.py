@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+# This module is used to wrap a model and its metrics into a single object
+# for comparison of models and finding the best ones
 
 class metric_wrapper:
     def __init__(self, rmse, mae, accuracy, model = None):
